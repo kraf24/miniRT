@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_shapes.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpinchuk <gpinchuk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fstaryk <fstaryk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 15:08:10 by gpinchuk          #+#    #+#             */
-/*   Updated: 2023/01/02 15:18:09 by gpinchuk         ###   ########.fr       */
+/*   Updated: 2023/01/05 13:57:17 by fstaryk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,13 +81,13 @@ void parse_cylinder(char **str, t_scene *scene)
 		temp = temp->next;
 	temp->flag = CY;
 	next(str, scene);
-	temp->figures.cy.centr = read_vec(str, scene, 0);
+	temp->figures.cy.o = read_vec(str, scene, 0);
 	next(str, scene);
-	temp->figures.cy.orient = read_vec(str, scene, 0);
+	temp->figures.cy.nv = _norm(read_vec(str, scene, 0));
 	next(str, scene);
-	temp->figures.cy.di = stof(str, scene, 0);
+	temp->figures.cy.r = stof(str, scene, 0) / 2;
 	next(str, scene);
-	temp->figures.cy.height = stof(str, scene, 0);
+	temp->figures.cy.h = stof(str, scene, 0);
 	next(str, scene);
 	temp->collor = read_vec(str, scene, 1);
 	next(str, scene);

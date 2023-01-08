@@ -6,7 +6,7 @@
 /*   By: fstaryk <fstaryk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 15:34:13 by fstaryk           #+#    #+#             */
-/*   Updated: 2022/12/13 21:19:35 by fstaryk          ###   ########.fr       */
+/*   Updated: 2023/01/03 14:40:50 by fstaryk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,19 @@ void print_sphere(t_figures *fig){
     print_p3(fig->figures.sp.centr);
 }
 
+void print_cylinder(t_figures *fig){
+    printf("\n\t CYLINDER\nradius is %f\nheight is %f\norigin and normal :\n", fig->figures.cy.r, fig->figures.cy.h);
+    print_p3(fig->figures.cy.o);
+    print_p3(fig->figures.cy.nv);
+}
+
 void print_figures(t_figures *fig){
     while (fig)
     {
         if(fig->flag == SP)
             print_sphere(fig);
+        if(fig->flag == CY)
+            print_cylinder(fig);
         fig = fig->next;
     }
     

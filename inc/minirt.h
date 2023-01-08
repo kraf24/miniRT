@@ -1,14 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   minirt.h                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gpinchuk <gpinchuk@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 14:41:25 by gpinchuk          #+#    #+#             */
-/*   Updated: 2023/01/08 18:51:24 by gpinchuk         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+
 
 #ifndef MINIRT_H
 #define MINIRT_H
@@ -25,8 +15,7 @@
 # include "libft.h"
 # include "scene.h"
 
-int abvg;
-//#define PI_180 0.0174532925f
+#define EPSILON 0.00001
 
 //ERRORS
 int		print_error(char *str);
@@ -80,6 +69,10 @@ void render_scene(t_scene *scene);
 
 void print_p3(t_p3 x);
 void print_scene(t_scene *scene);
+
+//cylinder
+
+float	cylinder_intersection(t_p3 d, t_p3 cam_o, t_figures* cy);
 
 
 //keyhook

@@ -7,7 +7,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/minirt",
-            "args": [],
+            "args": ["/Users/fstaryk/Desktop/minirt_mat/scene/checkerboard.rt"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}/..",
             "environment": [],

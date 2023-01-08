@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_other.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpinchuk <gpinchuk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fstaryk <fstaryk@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 14:11:57 by gpinchuk          #+#    #+#             */
-/*   Updated: 2022/12/28 13:54:39 by gpinchuk         ###   ########.fr       */
+/*   Updated: 2023/01/07 13:51:00 by fstaryk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void parse_camera(char **str, t_scene *scene)
 	next(str, scene);
 	scene->camera->pos = read_vec(str, scene, 0);
 	next(str, scene);
-	scene->camera->direct = read_vec(str, scene, 0);
+	scene->camera->direct = _norm(read_vec(str, scene, 0));
 	next(str, scene);
 	scene->camera->fov = stof(str, scene, 2);
 	scene->camera->fov_l = tan((scene->camera->fov * M_PI / 180) / 2);

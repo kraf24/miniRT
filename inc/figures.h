@@ -1,14 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   figures.h                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gpinchuk <gpinchuk@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 13:45:17 by gpinchuk          #+#    #+#             */
-/*   Updated: 2023/01/08 14:29:23 by gpinchuk         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+
 
 #ifndef FIGURES_H
 # define FIGURES_H
@@ -40,10 +30,13 @@ typedef struct s_triangle
 
 typedef struct s_cylinder
 {
-	t_p3		centr;
-	t_p3		orient;
-	float		di;
-	float		height;
+	t_p3		o;
+	t_p3		nv;
+	float		r;
+	float		h;
+	t_p3		normal;
+	float		dist1;
+	float		dist2;
 }				t_cylinder;
 
 typedef struct	s_material

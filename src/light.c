@@ -1,17 +1,7 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   light.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gpinchuk <gpinchuk@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 20:09:38 by fstaryk           #+#    #+#             */
-/*   Updated: 2023/01/07 14:43:28 by gpinchuk         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "../inc/minirt.h"
 
+//add triangle
 t_p3    calculate_base_reflection(t_p3 inter_p, t_figures *fig){
     t_p3 refl;
     
@@ -19,6 +9,8 @@ t_p3    calculate_base_reflection(t_p3 inter_p, t_figures *fig){
         refl = _substruct(inter_p, fig->figures.sp.centr);
     if(fig->flag == PL)
         refl = fig->figures.pl.orient;
+	if(fig->flag == CY)
+		refl = fig->figures.cy.normal;
     return refl;
 }
 

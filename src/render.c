@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   render.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: gpinchuk <gpinchuk@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/10 16:47:30 by fstaryk           #+#    #+#             */
-/*   Updated: 2023/01/08 19:29:19 by gpinchuk         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "../inc/minirt.h"
 
@@ -145,6 +134,8 @@ float try_intersections(t_p3 d, t_p3 cam_o, t_figures *fig, t_figures *closest_f
 			inter_dist = plane_intersection(d, cam_o, fig->figures.pl.orient, fig->figures.pl.centr);
 		else if(fig->flag == TR)
 			inter_dist = trinagle_intersection(d, cam_o, fig->figures.tr);
+		else if(fig->flag == CY)
+			inter_dist = cylinder_intersection(d, cam_o, fig);
         if(inter_dist < closest_inter && inter_dist > 0){
             closest_inter = inter_dist;
             *closest_fig = *fig;
@@ -219,6 +210,7 @@ void render_scene(t_scene *scene)
 			dir_vec = get_screen_coord(x, y, scene);                 
 			color = trace_ray(dir_vec, scene->camera->pos, scene, 2);
             my_mlx_pixel_put(scene, x, y, color); 
+			// exit(0);
 			x++;
 		}
 		y++;
